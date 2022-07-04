@@ -25,6 +25,12 @@ namespace GitLabApiClient
         /// </summary>
         IProjectsClient Projects { get; }
 
+
+        /// <summary>
+        /// Access GitLab's project remote mirrors API.
+        /// </summary>
+        IProjectRemoteMirrorsClient ProjectRemoteMirrorsClient { get; }
+
         /// <summary>
         /// Access GitLab's users API.
         /// </summary>

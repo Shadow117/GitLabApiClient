@@ -65,6 +65,7 @@ namespace GitLabApiClient
             Uploads = new UploadsClient(_httpFacade);
             MergeRequests = new MergeRequestsClient(_httpFacade, mergeRequestsQueryBuilder, projectMergeRequestsQueryBuilder, projectMergeRequestsNotesQueryBuilder);
             Projects = new ProjectsClient(_httpFacade, projectQueryBuilder, projectMilestonesQueryBuilder, jobQueryBuilder);
+            ProjectRemoteMirrorsClient = new ProjectRemoteMirrorsClient(_httpFacade);
             Users = new UsersClient(_httpFacade);
             Groups = new GroupsClient(_httpFacade, groupsQueryBuilder, projectsGroupsQueryBuilder, projectMilestonesQueryBuilder, groupLabelsQueryBuilder);
             Branches = new BranchClient(_httpFacade, branchQueryBuilder);
@@ -101,6 +102,11 @@ namespace GitLabApiClient
         /// Access GitLab's projects API.
         /// </summary>
         public IProjectsClient Projects { get; }
+
+        /// <summary>
+        /// Access GitLab's project remote mirrors API.
+        /// </summary>
+        public IProjectRemoteMirrorsClient ProjectRemoteMirrorsClient { get; }
 
         /// <summary>
         /// Access GitLab's users API.
